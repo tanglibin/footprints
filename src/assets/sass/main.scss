@@ -1,0 +1,25 @@
+// 控制 uni-page-body
+page{height: 100%;font-family:arial, Roboto Condensed;}
+// APP 端挤出顶部状态栏位置
+.status_bar {
+	height: var(--status-bar-height);
+	width: 100%;
+	background: $navigationBgColor;
+}
+
+.btn{background-image: linear-gradient(to right, #f86785, #b666bb);color: #fff;margin-top: 60rpx;width: 368rpx;font-size: 32rpx;}
+.confirm-box{padding:60rpx 30rpx;text-align: center;}
+.high{color: #ff6780;display: inline;padding: 0 6rpx;}
+.footer-btn-box{
+	&{display: flex;}
+	.cancel, .ok{flex: 1;margin: 0;border-radius: 0;background-color: #efefef;height: 80rpx;line-height: 80rpx;font-weight: 700;text-align: center;}
+	.cancel{color: #E64340;margin-right: 1px!important;}
+	.ok{color: #1AAD19;}
+}
+
+.foot-btn{
+	&{padding: 30rpx 0;}
+	.btn{margin-top: 0;}
+}
+
+.placeholder{color: #999;font-size: 24rpx;}

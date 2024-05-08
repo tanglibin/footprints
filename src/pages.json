@@ -1,0 +1,26 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+		},
+		{
+			"path" : "pages/list/list"
+		},
+		{
+			"path" : "pages/add/add"
+		},
+		{
+			"path" : "pages/info/info"
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"backgroundTextStyle": "light"
+	},
+	"easycom": {
+	  "autoscan": true,
+	  "custom": {
+	    "^uni-((?!(shadow-root)).*)": "@/components/uni-ui/uni-$1/uni-$1.vue"
+	  }
+	}
+}
