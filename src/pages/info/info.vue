@@ -156,7 +156,7 @@
 <style lang="scss" scoped>
 	.info-page{display: flex;flex-direction: column;font-size: 28rpx;color: #333;}
 	.more{position: fixed;top: calc($navigationHeight + var(--status-bar-height));right: 0;z-index: 2;color: #ccc;font-size: 40rpx;padding: 20rpx;}
-	.scroll-view{flex: 1;}
+	.scroll-view{flex: 1;overflow: hidden;}
 	.skin{display: flex;}
 	.skin_0 .skin-item{padding-top: 60rpx;}
 	.left-year{width: 160rpx;text-align: right;border-right: 2rpx solid #999;line-height: 50rpx;}

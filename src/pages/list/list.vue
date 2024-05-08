@@ -51,11 +51,13 @@
 			},
 			/*标记数据*/
 			marksData(){
-				let markerList = [].concat(this.$store.state.markerList || []);
+				let list = [].concat(this.$store.state.markerList || []);
 				let nations = new Set();
-				markerList.forEach(item => {
-					item.iconPath = '/static/mark.png';
+				let markerList = [];
+				list.forEach(item => {
+					let obj = Object.assign({iconPath: '/static/mark.png'}, item);
 					nations.add(item.country);
+					markerList.push(obj);
 				})
 				return {
 					markerList,
@@ -72,6 +74,7 @@
 				Promise.all([this.getList(), this.getLocation()]).then(res => {
 					let markList = res[0];
 					let localData = res[1] || {};
+					console.log(localData)
 					let index = markList.findIndex(item => localData.country == item.country && localData.province == item.province && localData.city == item.city);
 					this.showPopup = index == -1;
 				})
@@ -91,6 +94,10 @@
 						success: res => {
 							let {address, latitude, longitude} = res;
 							let {country, province, city} = address;
+							
+							city = (!city || Array.isArray(city)) ? province : city;
+							province = province.replace(/(壮族自治区|回族自治区|回族自治区|维吾尔自治区|自治区|特别行政区)/, '');
+							
 							let obj = {country, province, city, latitude, longitude};
 							this.locationAddr = obj;
 							resolve(obj);

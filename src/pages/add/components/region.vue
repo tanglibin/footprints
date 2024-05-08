@@ -129,8 +129,10 @@
 						return ;
 					}
 					let zb = res.location.split(',');
-					province = res.province;
-					city = res.city;
+					
+					city = (!res.city || Array.isArray(res.city)) ? res.province : res.city;
+					province = res.province.replace(/(壮族自治区|回族自治区|回族自治区|维吾尔自治区|自治区|特别行政区)/, '');
+					
 					latitude = zb[1];
 					longitude = zb[0];
 					

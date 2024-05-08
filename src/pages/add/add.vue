@@ -49,7 +49,8 @@
 			/*地点选中*/
 			selectRegion(data){
 				this.regionData = data;
-				this.address = data.province + data.city;
+				let {province, city} = data;
+				this.address = (city.startsWith(province) ? '' : province) + city;
 			},
 			
 			/*保存*/
