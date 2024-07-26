@@ -1,6 +1,6 @@
 // lxit1203@gmail.com
 module.exports = {
-	GD_USERNAME: '',
+	GD_USERNAME: '', //高德用户名  高德后台获取
 	GD_ANDROID_KEY: '', //安卓key 高德后台获取
 	GD_WEB_KEY: '', //web key获取指定城市坐标用 高德后台获取
 	DATA_FILE_URL: '' ,//数据文件所在目录
