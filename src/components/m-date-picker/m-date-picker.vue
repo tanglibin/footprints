@@ -40,7 +40,7 @@
 				const start = nowYear - 90;
 				let year = [];
 				
-				for(let i=start; i<=nowYear; i++ ){
+				for(let i=start+1; i<=nowYear; i++ ){
 					year.push(i);
 				}
 				return year;

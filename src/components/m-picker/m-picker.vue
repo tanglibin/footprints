@@ -7,7 +7,7 @@
 		<view v-if="column.length" class="column-cell">
 			<view class="column-cell--item" v-for="(item, i) in column" :key="i">{{item}}</view>
 		</view>
-		<picker-view :value="selIndexList" @change="handlerChange" class="picker-view" mask-class="custom-mask" indicator-class="custom-indicator">
+		<picker-view :value="selIndexList" @change="handlerChange" class="picker-view" mask-class="custom-mask" indicator-class="custom-indicator" indicator-style="height: 72rpx;">
 			<picker-view-column v-for="(ele, i) in columnNum" :key="i">
 				<view class="item" v-for="(item, index) in list[i]" :key="index">{{item}}</view>
 			</picker-view-column>
@@ -75,9 +75,9 @@
 
 <style lang="scss" scoped>
 	.picker-view {height: 400rpx;background-color: #fff;color: #333;}
-	.item {align-items: center;justify-content: center;text-align: center;height: 72rpx;line-height: 72rpx;}
+	.item {align-items: center;justify-content: center;text-align: center;line-height: 72rpx;}
 	::v-deep.custom-indicator{
-		&{height: 72rpx;line-height: 72rpx;color: #fff;border: solid #efefef;border-width: 1px 0;}
+		&{color: #fff;border: solid #efefef;border-width: 1px 0;}
 		&:before, &:after{border: none;}
 	}
 	
